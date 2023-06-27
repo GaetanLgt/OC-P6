@@ -25,7 +25,8 @@ class UserFixtures extends Fixture implements OrderedFixtureInterface
         $user->setPassword($hashedPassword);
         $user->setEmail('test@test.fr')
             ->setPseudo('test')
-            ->setPicture('https://picsum.photos/200/300');
+            ->setPicture('https://picsum.photos/200/300')
+            ->setIsVerified(true);
         $manager->persist($user);
 
         $user = new User();
@@ -37,7 +38,8 @@ class UserFixtures extends Fixture implements OrderedFixtureInterface
         $user->setPassword($hashedPassword);
         $user->setEmail('admin@admin.fr')
             ->setPseudo('Admin')
-            ->setPicture('https://picsum.photos/200/300');
+            ->setPicture('https://picsum.photos/200/300')
+            ->setIsVerified(true);
         $manager->persist($user);
 
         $manager->flush();
