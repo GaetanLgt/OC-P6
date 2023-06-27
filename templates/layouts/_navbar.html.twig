@@ -1,0 +1,27 @@
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">SnowTricks</a>
+		</div>
+		<ul class="nav navbar-nav">
+			<li class="active">
+				<a href="{{ path('app_home')}}">Home</a>
+			</li>
+			{% if app.user %}
+				{{ app.user.pseudo }}
+			{% else %}
+				<li>
+					<a href="{{ path('app_login') }}">Connexion</a>
+				</li>
+				<li>
+					<a href="{{ path('app_register') }}">Inscription</a>
+				</li>
+			{% endif %}
+			<li>
+				<a href="#">Page 3</a>
+			</li>
+
+
+		</ul>
+	</div>
+</nav>
