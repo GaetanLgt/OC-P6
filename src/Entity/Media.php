@@ -93,4 +93,18 @@ class Media
 
         return $this;
     }
+
+    public function __toString(): string
+    {
+        if ($this->type === 'image') {
+            return $this->url;
+        }
+        if ($this->type === 'video') {
+            return $this->url;
+        }
+        if ($this->type === 'embed') {
+            return $this->content;
+        }
+        return $this->url;
+    }
 }

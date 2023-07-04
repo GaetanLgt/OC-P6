@@ -1,0 +1,21 @@
+@import "utils/variables";
+@import "utils/mixins";
+@import "utils/functions";
+
+@import "vendors/icons";
+
+@import "base/reset";
+@import "base/typography";
+@import "base/animations";
+@import "base/utilities";
+
+@import "layouts/navigation";
+@import "layouts/header";
+@import "layouts/footer";
+
+@import "components/buttons";
+@import "components/form";
+@import "components/card";
+
+@import "pages/home";
+

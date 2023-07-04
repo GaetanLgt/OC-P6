@@ -12,11 +12,27 @@
             <div class="col-12">
                 <h2>Les figures</h2>
                 <p>Voici la liste des figures</p>
-                <ul>
+                <div class="cards">
+               
                     {% for trick in tricks %}
-                        <li><a href="{{ path('trick_show', {'slug': trick.slug}) }}">{{ trick.name }}</a></li>
+                        <div class="cards__card">
+                            <div class="cards__card__img">
+                                {% for media in trick.media %}
+                                <img src="{{ asset('uploads/images/' ~ media) }}" alt="{{ trick.name }}" class="img-fluid">
+                                {% endfor %}
+                            </div>
+                            <div class="cards__card__header">
+                                <h3>{{ trick.name }}</h3>
+                            </div>
+                            <div class="cards__card__body">
+                                <p>{{ trick.description }}</p>
+                            </div>
+                            <div class="cards__card__footer">
+                                <a href="{{ path('trick_show', {'slug': trick.slug}) }}" class="btn btn-primary">Voir la figure</a>
+                            </div>
+                        </div>
                     {% endfor %}
-                </ul>
+                 </div>
             </div>
         </div>
 
