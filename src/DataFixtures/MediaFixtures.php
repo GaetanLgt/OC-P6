@@ -14,21 +14,21 @@ class MediaFixtures extends Fixture implements OrderedFixtureInterface
         // $product = new Product();
         // $manager->persist($product);
         $media = new Media();
-        $media->setUrl('https://picsum.photos/200/300')
+        $media->setUrl('https://picsum.photos/300/500')
         ->setName('Mute')
             ->setType('image')
             ->setFigure($this->getReference('mute'));
         $manager->persist($media);
 
         $media = new Media();
-        $media->setUrl('https://picsum.photos/200/300')
+        $media->setUrl('https://picsum.photos/300/500')
             ->setName('Indy')
             ->setType('image')
             ->setFigure($this->getReference('indy'));
         $manager->persist($media);
 
         $media = new Media();
-        $media->setUrl('https://picsum.photos/200/300')
+        $media->setUrl('https://picsum.photos/300/500')
             ->setName('Sad')
             ->setType('image')
             ->setFigure($this->getReference('sad'));

@@ -22,12 +22,12 @@ class DeleteTrickController extends AbstractController
                 'No trick found for slug ' . $slug
             );
         }
+        foreach ($trick->getMedia() as $image) {
+            $entityManager->remove($image);
+        }
         $entityManager->remove($trick);
         $entityManager->flush();
 
-        return $this->render('tricks/delete.html.twig', [
-            'controller_name' => 'TricksController',
-            'trick' => $trick
-        ]);
+        return $this->redirectToRoute('app_home');
     }
 }
