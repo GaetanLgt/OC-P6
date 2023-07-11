@@ -23,9 +23,6 @@ class Figure
     private ?string $description = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $groupe = null;
-
-    #[ORM\Column(length: 255)]
     private ?string $slug = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
@@ -40,10 +37,14 @@ class Figure
     #[ORM\OneToMany(mappedBy: 'figure', targetEntity: Comment::class)]
     private Collection $comments;
 
+    #[ORM\ManyToMany(targetEntity: Category::class, inversedBy: 'figures')]
+    private Collection $Category;
+
     public function __construct()
     {
         $this->media = new ArrayCollection();
         $this->comments = new ArrayCollection();
+        $this->Category = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -71,18 +72,6 @@ class Figure
     public function setDescription(string $description): static
     {
         $this->description = $description;
-
-        return $this;
-    }
-
-    public function getGroupe(): ?string
-    {
-        return $this->groupe;
-    }
-
-    public function setGroupe(string $groupe): static
-    {
-        $this->groupe = $groupe;
 
         return $this;
     }
@@ -179,6 +168,30 @@ class Figure
                 $comment->setFigure(null);
             }
         }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Category>
+     */
+    public function getCategory(): Collection
+    {
+        return $this->Category;
+    }
+
+    public function addCategory(Category $category): static
+    {
+        if (!$this->Category->contains($category)) {
+            $this->Category->add($category);
+        }
+
+        return $this;
+    }
+
+    public function removeCategory(Category $category): static
+    {
+        $this->Category->removeElement($category);
 
         return $this;
     }
