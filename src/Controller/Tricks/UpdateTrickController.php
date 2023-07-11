@@ -3,7 +3,7 @@
 namespace App\Controller\Tricks;
 
 use App\Entity\Figure;
-use App\Form\FigureType;
+use App\Form\TrickType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,7 +23,7 @@ class UpdateTrickController extends AbstractController
             );
         }
 
-        $form = $this->createForm(FigureType::class, $trick);
+        $form = $this->createForm(TrickType::class, $trick);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
