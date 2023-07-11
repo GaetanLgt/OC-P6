@@ -18,11 +18,12 @@
                         <div class="cards__card">
                             <div class="cards__card__img">
                                 {% for media in trick.media %}
-                                {{ dump(media) }}
                                 {% if media.type == "image" %}
                                 <img src="{{ media}}" alt="{{ trick.name }}" class="img-fluid">
                                     {% elseif media.type == 'embed' %}
-                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/EzGPmg4fFL8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    
+                                        {{ media.content|raw }}
+                                    
                                     
                                 {% endif %}
                                 {% endfor %}

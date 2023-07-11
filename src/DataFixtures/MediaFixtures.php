@@ -41,7 +41,12 @@ class MediaFixtures extends Fixture implements OrderedFixtureInterface
             ->setFigure($this->getReference('360'));
         $manager->persist($media);
 
-
+        $media = new Media();
+        $media->setContent('<iframe width="560" height="315" src="https://www.youtube.com/embed/mBB7CznvSPQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>')
+            ->setName('backside-air')
+            ->setType('embed')
+            ->setFigure($this->getReference('backside-air'));
+        $manager->persist($media);
 
         $media = new Media();
         $media->setUrl('https://www.youtube.com/embed/2g811Eo7K8U')
@@ -50,6 +55,8 @@ class MediaFixtures extends Fixture implements OrderedFixtureInterface
             ->setFigure($this->getReference('180'));
 
         $media = new Media();
+
+        
 
         $manager->flush();
     }
