@@ -15,7 +15,7 @@ class FigureFixtures extends Fixture implements OrderedFixtureInterface
         $figure = new Figure();
         $figure->setName('Mute')
             ->setDescription('Saisie de la carre frontside de la planche entre les deux pieds avec la main avant.')
-            ->setGroupe('grab')
+            ->addCategory($this->getReference('cat-grab'))
             ->setSlug('mute')
             ->setCreatedAt(new \DateTimeImmutable('2021-06-01 08:00:00'));
         $manager->persist($figure);
@@ -24,7 +24,7 @@ class FigureFixtures extends Fixture implements OrderedFixtureInterface
         $figure = new Figure();
         $figure->setName('Sad')
             ->setDescription('Saisie de la carre backside de la planche, entre les deux pieds, avec la main avant.')
-            ->setGroupe('grab')
+            ->addCategory($this->getReference('cat-grab'))
             ->setSlug('sad')
             ->setCreatedAt(new \DateTimeImmutable('2021-06-01 08:00:00'));
         $manager->persist($figure);
@@ -33,7 +33,7 @@ class FigureFixtures extends Fixture implements OrderedFixtureInterface
         $figure = new Figure();
         $figure->setName('Indy')
             ->setDescription('Saisie de la carre frontside de la planche, entre les deux pieds, avec la main arrière.')
-            ->setGroupe('grab')
+            ->addCategory($this->getReference('cat-grab'))
             ->setSlug('indy')
             ->setCreatedAt(new \DateTimeImmutable('2021-06-01 08:00:00'));
         $manager->persist($figure);
@@ -42,7 +42,7 @@ class FigureFixtures extends Fixture implements OrderedFixtureInterface
         $figure = new Figure();
         $figure->setName('360')
             ->setDescription('Trois six pour un tour complet.')
-            ->setGroupe('rotation')
+            ->addCategory($this->getReference('cat-rotation'))
             ->setSlug('360')
             ->setCreatedAt(new \DateTimeImmutable('2021-06-01 08:00:00'));
         $manager->persist($figure);
@@ -51,7 +51,7 @@ class FigureFixtures extends Fixture implements OrderedFixtureInterface
         $figure = new Figure();
         $figure->setName('180')
             ->setDescription('Un demi-tour.')
-            ->setGroupe('rotation')
+            ->addCategory($this->getReference('cat-rotation'))
             ->setSlug('180')
             ->setCreatedAt(new \DateTimeImmutable('2021-06-01 08:00:00'));
         $manager->persist($figure);
@@ -60,7 +60,7 @@ class FigureFixtures extends Fixture implements OrderedFixtureInterface
         $figure = new Figure();
         $figure->setName('720')
             ->setDescription('Deux tours complets.')
-            ->setGroupe('rotation')
+            ->addCategory($this->getReference('cat-rotation'))
             ->setSlug('720')
             ->setCreatedAt(new \DateTimeImmutable('2021-06-01 08:00:00'));
         $manager->persist($figure);
@@ -69,7 +69,7 @@ class FigureFixtures extends Fixture implements OrderedFixtureInterface
         $figure = new Figure();
         $figure->setName('Backside Air')
             ->setDescription('Saisie de la carre backside de la planche, entre les deux pieds, avec la main avant.')
-            ->setGroupe('rotation')
+            ->addCategory($this->getReference('cat-rotation'))
             ->setSlug('backside-air')
             ->setCreatedAt(new \DateTimeImmutable('2021-06-01 08:00:00'));
         $manager->persist($figure);
@@ -78,7 +78,7 @@ class FigureFixtures extends Fixture implements OrderedFixtureInterface
         $figure = new Figure();
         $figure->setName('Frontside Air')
             ->setDescription('Saisie de la carre frontside de la planche, entre les deux pieds, avec la main arrière.')
-            ->setGroupe('rotation')
+            ->addCategory($this->getReference('cat-rotation'))
             ->setSlug('frontside-air')
             ->setCreatedAt(new \DateTimeImmutable('2021-06-01 08:00:00'));
         $manager->persist($figure);
@@ -87,7 +87,7 @@ class FigureFixtures extends Fixture implements OrderedFixtureInterface
         $figure = new Figure();
         $figure->setName('Nose grab')
             ->setDescription('Saisie de la partie avant (nose) de la planche, avec la main avant.')
-            ->setGroupe('grab')
+            ->addCategory($this->getReference('cat-grab'))
             ->setSlug('nose-grab')
             ->setCreatedAt(new \DateTimeImmutable('2021-06-01 08:00:00'));
 
@@ -97,7 +97,7 @@ class FigureFixtures extends Fixture implements OrderedFixtureInterface
         $figure = new Figure();
         $figure->setName('Tail grab')
             ->setDescription('Saisie de la partie arrière (tail) de la planche, avec la main arrière.')
-            ->setGroupe('grab')
+            ->addCategory($this->getReference('cat-grab'))
             ->setSlug('tail-grab')
             ->setCreatedAt(new \DateTimeImmutable('2021-06-01 08:00:00'));
 
@@ -107,7 +107,7 @@ class FigureFixtures extends Fixture implements OrderedFixtureInterface
         $figure = new Figure();
         $figure->setName('Japan Air')
             ->setDescription('Saisie de l\'avant de la planche, avec la main avant, du côté de la carre frontside.')
-            ->setGroupe('grab')
+            ->addCategory($this->getReference('cat-grab'))
             ->setSlug('japan-air')
             ->setCreatedAt(new \DateTimeImmutable('2021-06-01 08:00:00'));
 
@@ -117,7 +117,7 @@ class FigureFixtures extends Fixture implements OrderedFixtureInterface
         $figure = new Figure();
         $figure->setName('Seat belt')
             ->setDescription('Saisie du carre frontside à l\'arrière avec la main avant.')
-            ->setGroupe('grab')
+            ->addCategory($this->getReference('cat-grab'))
             ->setSlug('seat-belt')
             ->setCreatedAt(new \DateTimeImmutable('2021-06-01 08:00:00'));
 
@@ -127,7 +127,7 @@ class FigureFixtures extends Fixture implements OrderedFixtureInterface
         $figure = new Figure();
         $figure->setName('Truck driver')
             ->setDescription('Saisie du carre avant et arrière avec chaque main.')
-            ->setGroupe('grab')
+            ->addCategory($this->getReference('cat-grab'))
             ->setSlug('truck-driver')
             ->setCreatedAt(new \DateTimeImmutable('2021-06-01 08:00:00'));
             
@@ -137,7 +137,7 @@ class FigureFixtures extends Fixture implements OrderedFixtureInterface
         $figure = new Figure();
         $figure->setName('Stalefish')
             ->setDescription('Saisie de la carre backside de la planche entre les deux pieds avec la main arrière.')
-            ->setGroupe('grab')
+            ->addCategory($this->getReference('cat-grab'))
             ->setSlug('stalefish')
             ->setCreatedAt(new \DateTimeImmutable('2021-06-01 08:00:00'));
 
@@ -147,7 +147,7 @@ class FigureFixtures extends Fixture implements OrderedFixtureInterface
         $figure = new Figure();
         $figure->setName('Tail slide')
             ->setDescription('Glissade sur la partie arrière de la planche.')
-            ->setGroupe('slide')
+            ->addCategory($this->getReference('cat-slide'))
             ->setSlug('tail-slide')
             ->setCreatedAt(new \DateTimeImmutable('2021-06-01 08:00:00'));
 
@@ -157,7 +157,7 @@ class FigureFixtures extends Fixture implements OrderedFixtureInterface
         $figure = new Figure();
         $figure->setName('Nose slide')
             ->setDescription('Glissade sur la partie avant de la planche.')
-            ->setGroupe('slide')
+            ->addCategory($this->getReference('cat-slide'))
             ->setSlug('nose-slide')
             ->setCreatedAt(new \DateTimeImmutable('2021-06-01 08:00:00'));
             
@@ -167,7 +167,7 @@ class FigureFixtures extends Fixture implements OrderedFixtureInterface
         $figure = new Figure();
         $figure->setName('Blunt slide')
             ->setDescription('Glissade sur le dessus de la planche.')
-            ->setGroupe('slide')
+            ->addCategory($this->getReference('cat-slide'))
             ->setSlug('blunt-slide')
             ->setCreatedAt(new \DateTimeImmutable('2021-06-01 08:00:00'));
 
@@ -179,11 +179,6 @@ class FigureFixtures extends Fixture implements OrderedFixtureInterface
 
     public function getOrder()
     {
-        return 2;
-    }
-
-    public function slugify($string)
-    {
-        return strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $string)));
+        return 3;
     }
 }

@@ -28,14 +28,15 @@
                                 {% endif %}
                                 {% endfor %}
                             </div>
-                            <div class="cards__card__header">
-                                <h3>{{ trick.name }}</h3>
-                            </div>
-                            <div class="cards__card__body">
-                                <p>{{ trick.description }}</p>
-                            </div>
                             <div class="cards__card__footer">
-                                <a href="{{ path('trick_show', {'slug': trick.slug}) }}" class="btn btn-primary">Voir la figure</a>
+                                <a href="{{ path('trick_show', {'slug': trick.slug}) }}" class="btn btn-primary">{{ trick.name }}</a>
+                                {% if app.user %}
+                                    <div class="cards__card__footer--admin">
+                                        <a href="{{ path('trick_edit', {'slug': trick.slug}) }}" class="btn btn-warning">Modifier</a>
+                                        <a href="{{ path('trick_delete', {'slug': trick.slug}) }}" class="btn btn-danger">Supprimer</a>
+                                    </div>
+                                    
+                                {% endif %}
                             </div>
                         </div>
                     {% endfor %}
