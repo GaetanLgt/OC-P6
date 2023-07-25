@@ -23,24 +23,12 @@ class TrickType extends AbstractType
                 'attr' => [
                     'placeholder' => 'Nom de la figure'
                 ],
-                'constraints' => [
-                    new Length([
-                        'min' => 3,
-                        'max' => 50,
-                    ]),
-                ],
                 'required' => true
             ])
             ->add('description', TextareaType::class, [
                 'label' => 'Description de la figure',
                 'attr' => [
                     'placeholder' => 'Description de la figure'
-                ],
-                'constraints' => [
-                    new Length([
-                        'min' => 3,
-                        'max' => 500,
-                    ]),
                 ],
                 'required' => true
             ])
@@ -56,24 +44,12 @@ class TrickType extends AbstractType
                 'attr' => [
                     'placeholder' => 'Slug de la figure'
                 ],
-                'constraints' => [
-                    new Length([
-                        'min' => 3,
-                        'max' => 50,
-                    ]),
-                ],
                 'required' => true
             ])
             ->add('updatedAt', DateType::class, [
                 'label' => 'Date de mise à jour de la figure',
                 'attr' => [
                     'placeholder' => 'Date de mise à jour de la figure'
-                ],
-                'constraints' => [
-                    new Length([
-                        'min' => 3,
-                        'max' => 50,
-                    ]),
                 ],
                 'required' => true
             ])
@@ -84,6 +60,9 @@ class TrickType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Figure::class,
+            'csrf_protection' => true,
+            'csrf_field_name' => '_token',
+            'csrf_token_id'   => 'trick_item',
         ]);
     }
 }

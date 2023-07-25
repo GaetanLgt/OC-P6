@@ -1,19 +1,22 @@
-<nav class="navbar navbar-default">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="#">SnowTricks</a>
+<nav class="navbar">
+	
+		<div class="navbar__header">
+			<a class="navbar-brand" href="{{ path('app_home')}}">SnowTricks</a>
 		</div>
-		<ul class="nav navbar-nav">
-			<li class="active">
+		<ul class="navbar__items">
+			<li class='navbar__items__item'>
 				<a href="{{ path('app_home')}}">Home</a>
 			</li>
 			{% if app.user %}
-				{{ app.user.pseudo }}
+				<span>{{ app.user.pseudo }}</span>
+				<li class="navbar__items__item">
+					<a href="{{ path('app_logout') }}">Déconnexion</a>
+				</li>
 			{% else %}
-				<li>
+				<li class="navbar__items__item">
 					<a href="{{ path('app_login') }}">Connexion</a>
 				</li>
-				<li>
+				<li class="navbar__items__item">
 					<a href="{{ path('app_register') }}">Inscription</a>
 				</li>
 			{% endif %}
@@ -23,5 +26,5 @@
 
 
 		</ul>
-	</div>
+	
 </nav>
