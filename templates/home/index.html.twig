@@ -4,15 +4,25 @@
 {% endblock %}
 
 {% block body %}
-	
-	<h1>Snowtricks</h1>
-	<p>Page d'accueil</p>
+	<div class="container">
+		<div class="row">
+			<div class="col col-12">
+				<div class="jumbotron" style="background-image: url('{{ asset('img/hero_banner.jpg')}}')">
+					<h1 class="display-4">Bienvenue sur SnowTricks</h1>
+					<p class="lead">SnowTricks est un site communautaire qui permet à ses utilisateurs de partager leurs figures de snowboard.</p>
+					<hr class="my-4">
+					<p>Vous pouvez consulter les figures sans être inscrit, mais pour en ajouter ou en modifier, il faut être inscrit.</p>
+					<p class="lead">
+						<a class="btn btn-primary btn-lg" href="{{ path('app_register') }}" role="button">S'inscrire</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<div class="container">
 		<div class="row">
-			<div class="col-12">
-				<h2>Les figures</h2>
-				<p>Voici la liste des figures</p>
+			<div class="col col-12">
 				<div class="cards">
 
 					{% for trick in tricks %}
